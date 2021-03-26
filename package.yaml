@@ -1,0 +1,60 @@
+name:                ivo-bot
+version:             0.1.0.0
+github:              "jamestmartin/ivo-bot"
+license:             GPL-3
+author:              "James Martin"
+maintainer:          "james@jtmar.me"
+copyright:           "2021 James Martin"
+synopsis:            "A Discord bot for the Ivo programming language."
+
+extra-source-files:
+- README.md
+
+description:         Please see the README on GitHub at <https://github.com/ivolang/ivo-bot#readme>
+
+default-extensions:
+- BlockArguments
+- ImportQualifiedPost
+- LambdaCase
+- MultiWayIf
+- NamedFieldPuns
+- OverloadedStrings
+
+dependencies:
+- jtm-lambda-calculus
+
+- base >= 4.7 && < 5
+- discord-haskell >= 1.8 && < 2
+- mtl >= 2.2.2 && < 3
+- parsec >= 3.1.14 && < 4
+- text >= 1.2.4 && < 2
+- unliftio >= 0.2.14 && < 0.3
+- unordered-containers >= 0.2.13 && < 0.3
+
+executables:
+  ivo-bot:
+    main:                Main.hs
+    source-dirs:         src
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+
+    - -Weverything
+    # Useless Safe Haskell warnings
+    - -Wno-missing-safe-haskell-mode
+    - -Wno-unsafe
+    - -Wno-safe
+    # Other stupid warnings
+    - -Wno-implicit-prelude
+    - -Wno-missing-deriving-strategies
+    # Less stupid warnings, but I still don't care
+    - -Wno-all-missed-specialisations
+    - -Wno-missing-local-signatures
+    # Explicit import lists are generally a good thing, but I don't want them
+    # in certain cases (e.g. importing my own modules, task-specific modules like the parser).
+    - -Wno-missing-import-lists
+    # Stuff I usually care about, but not for programs:
+    - -Wno-missing-export-lists
+    - -Wno-monomorphism-restriction
+    - -Wno-unused-do-bind

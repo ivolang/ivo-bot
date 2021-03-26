@@ -1,0 +1,45 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 68e68d7fa8ad118dbf1120767c8fe7b37dacc819e8c01f336617218cc73a96ad
+
+name:           ivo-bot
+version:        0.1.0.0
+synopsis:       A Discord bot for the Ivo programming language.
+description:    Please see the README on GitHub at <https://github.com/ivolang/ivo-bot#readme>
+homepage:       https://github.com/jamestmartin/ivo-bot#readme
+bug-reports:    https://github.com/jamestmartin/ivo-bot/issues
+author:         James Martin
+maintainer:     james@jtmar.me
+copyright:      2021 James Martin
+license:        GPL-3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/jamestmartin/ivo-bot
+
+executable ivo-bot
+  main-is: Main.hs
+  other-modules:
+      Paths_ivo_bot
+  hs-source-dirs:
+      src
+  default-extensions: BlockArguments ImportQualifiedPost LambdaCase MultiWayIf NamedFieldPuns OverloadedStrings
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -Weverything -Wno-missing-safe-haskell-mode -Wno-unsafe -Wno-safe -Wno-implicit-prelude -Wno-missing-deriving-strategies -Wno-all-missed-specialisations -Wno-missing-local-signatures -Wno-missing-import-lists -Wno-missing-export-lists -Wno-monomorphism-restriction -Wno-unused-do-bind
+  build-depends:
+      base >=4.7 && <5
+    , discord-haskell >=1.8 && <2
+    , jtm-lambda-calculus
+    , mtl >=2.2.2 && <3
+    , parsec >=3.1.14 && <4
+    , text >=1.2.4 && <2
+    , unliftio >=0.2.14 && <0.3
+    , unordered-containers >=0.2.13 && <0.3
+  default-language: Haskell2010

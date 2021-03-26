@@ -1,0 +1,11 @@
+resolver: lts-17.7
+
+packages:
+- .
+
+extra-deps:
+- git: https://github.com/ivolang/ivo.git
+  commit: ebf093525eb22d2cb5ec7f1cd58441fd65967994
+
+- discord-haskell-1.8.3@sha256:5216830fc38f505ba91cd794ca4aeb650c89269267c3fad95a34dfe51ece3a69,3562
+- emoji-0.1.0.2@sha256:d995572a5c7dcd28f98eb15c6e387a7b3bda1ac2477ab0d9dba8580d5d7b161f,1273
